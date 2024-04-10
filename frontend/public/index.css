@@ -1,0 +1,23 @@
+/* NavBar.css */
+nav {
+    background-color: #ffccf9; /* Lighter pink for the navbar */
+    padding: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.nav-link {
+    color: #d63384; /* Contrast color */
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 15px; /* Rounded edges */
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: #fbb1cd; /* A soft hover state */
+    color: white;
+}

@@ -1,0 +1,23 @@
+
+nav {
+    background-color: deeppink;
+    padding: 1rem;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.nav-link:hover,
+.nav-link:focus {
+    background-color: hotpink;
+    color: white;
+    outline: none;
+}

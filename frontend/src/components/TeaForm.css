@@ -1,0 +1,36 @@
+
+form {
+    background-color: #fff0f7;
+    border: 1px solid #ffccf9;
+    border-radius: 10px;
+    padding: 20px;
+    max-width: 500px;
+    margin: 20px auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #d63384;
+}
+
+input[type="text"], button {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    border: 2px solid #ffccf9;
+    border-radius: 20px;
+    box-sizing: border-box;
+}
+
+button {
+    background-color: #ff88a2;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #ff6699;
+}
