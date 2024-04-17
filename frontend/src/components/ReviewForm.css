@@ -1,0 +1,68 @@
+/* Review Form Container */
+.review-form-container {
+    background-color: #fff0f7;
+    border: 1px solid #ffccf9;
+    border-radius: 15px;
+    padding: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 2rem;
+    width: auto;
+    max-width: 600px; /* Adjust based on your layout */
+    transition: transform 0.2s ease;
+}
+
+.review-form-container:hover {
+    transform: translateY(-5px);
+}
+
+/* Form fields styling */
+.review-form-field {
+    border: 1px solid #ff69b4;
+    background-color: #fff0f5;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    width: 100%;
+}
+
+/* Label Styling */
+.review-form-label {
+    display: block;
+    margin-bottom: 5px;
+    color: #ff69b4;
+    font-weight: bold;
+}
+
+/* Button Styling in the Review Form */
+.review-form-button {
+    background-color: #ffb6c1;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 100%;
+}
+
+.review-form-button:hover {
+    background-color: #ff69b4;
+    color: white;
+}
+
+/* Adjust textarea height */
+textarea.review-form-field {
+    height: 120px; /* You can adjust the height as per your need */
+}
+
+/* Handling Errors Styling */
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 5px;
+}
+
+/* Apply consistent font family and colors from existing styles */
+body, button, input, textarea {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    color: #ff69b4;
+}
