@@ -4,10 +4,40 @@ import './TeaList.css';
 import {useTeaStore} from "../state/TeaStore";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import io from 'socket.io-client';
+import { socket } from '../socket';
+
 
 const TeaList = () => {
     const [selectedTeas, setSelectedTeas] = useState([]);
-    const {teas, deleteTea}=useTeaStore();
+    const {teas, deleteTea, setTeas}=useTeaStore();
+
+    useEffect(() => {
+        const handleNewTea = (newTea) => {
+            setTeas(prevTeas => [...prevTeas, newTea]);
+            toast.info(`New tea added: ${newTea.person}`);
+        };
+
+        const handleUpdateTea = (updatedTea) => {
+            setTeas(prevTeas => prevTeas.map(tea => tea.id === updatedTea.id ? updatedTea : tea));
+            toast.info(`Tea updated: ${updatedTea.person}`);
+        };
+
+        const handleDeleteTea = (deletedTeaId) => {
+            setTeas(prevTeas => prevTeas.filter(tea => tea.id !== deletedTeaId));
+            toast.error("Tea deleted!");
+        };
+
+        socket.on('tea created', handleNewTea);
+        socket.on('tea updated', handleUpdateTea);
+        socket.on('tea deleted', handleDeleteTea);
+
+        return () => {
+            socket.off('tea created', handleNewTea);
+            socket.off('tea updated', handleUpdateTea);
+            socket.off('tea deleted', handleDeleteTea);
+        };
+    }, []);
 
     const exportToJson = (teas) => {
         const filename = 'teasList.json';
